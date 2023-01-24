@@ -21,6 +21,7 @@ public class wallHitbox : MonoBehaviour
         
         if (other.gameObject.CompareTag("Wall"))
         {
+            
             transform.parent.transform.parent.GetComponent<mobMovementScript>().Flip();
         }
     }

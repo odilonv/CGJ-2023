@@ -6,41 +6,77 @@ using UnityEngine.SceneManagement;
 
 public class EventManager : MonoBehaviour
 {
-    
+    void Start()
+    {
+        levelStarted = false;
+        
+    }
 
-    public delegate void NextAction();
-    public static event NextAction OnNextAction; 
-
+    int i = 1;
     void Update()
     {
-        if(Input.GetButtonDown("NextAction"))
+        if(Input.GetButtonDown("NextAction")
+        && (i <= (gameManager.nbCoups - gameManager.nbCoupsRestants))
+        && levelStarted)
         {
+            
             nextAction();    
         } 
     }
 
+    public parametrableScript[] parametrables;
     public void nextAction()
     {
-        if(OnNextAction != null)
+        foreach(parametrableScript p in parametrables)
         {
-            OnNextAction();
+            if(p.num.num == i)
+            {
+                i++;
+                p.action();
+            }
         }
     }
 
-    public delegate void StartLevel();
-    public static event StartLevel OnLevelStart; 
+    
 
 
     public static bool levelStarted = false;
-    public static void startLevel()
+
+    public mobBehaviour[] mobListe;
+    public blockBehaviour[] blockListe;
+    public playerController player;
+    public uiScript ui;
+    public editManager edit;
+    public void startLevel()
     {
         levelStarted = true;
-        if(OnLevelStart != null)
+        foreach (mobBehaviour m in mobListe)
         {
-            OnLevelStart();
+            if(m != null)
+            {
+                levelStarted = true;
+                m.start();
+            }
+            
         }
+
+        foreach (blockBehaviour b in blockListe)
+        {
+            if(b != null)
+            {
+                b.start();
+            }
+        }
+
+        player.start();
+
+        ui.start();
+
+        edit.start();
         
     }
+
+
 
 
 

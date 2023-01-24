@@ -19,16 +19,6 @@ public class blockScript : MonoBehaviour
         
     }
 
-    void OnEnable()
-    {
-        EventManager.OnNextAction += nextAction;
-    }
-
-    void OnDisable()
-    {
-        EventManager.OnNextAction -= nextAction;
-    }
-
     void nextAction()
     {
         rb.gravityScale *= -1f;

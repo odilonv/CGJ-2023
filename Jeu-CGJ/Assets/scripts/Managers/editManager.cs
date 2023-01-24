@@ -7,17 +7,8 @@ public class editManager : MonoBehaviour
     public static int editState;
     public static bool editMode;
 
-    void OnEnable()
-    {
-        EventManager.OnLevelStart += start;
-    }
 
-    void onDisable()
-    {
-        EventManager.OnLevelStart -= start;
-    }
-
-    void start()
+    public void start()
     {
         editState = -2;
         editMode = false;

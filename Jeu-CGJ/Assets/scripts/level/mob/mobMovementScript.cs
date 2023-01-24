@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class mobMovementScript : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] public float speed;
     private Transform m_transform;
     public BoxCollider2D hitboxWall;
     void Awake() => m_transform = transform;

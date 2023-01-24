@@ -4,17 +4,7 @@ using UnityEngine;
 
 public class uiScript : MonoBehaviour
 {
-    void OnEnable()
-    {
-        EventManager.OnLevelStart += start;
-    }
-
-    void onDisable()
-    {
-        EventManager.OnLevelStart -= start;
-    }
-
-    void start()
+    public void start()
     {
         transform.gameObject.SetActive(false);
     }

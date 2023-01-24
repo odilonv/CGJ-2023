@@ -13,7 +13,7 @@ public class startButton : MonoBehaviour
 
     void Update()
     {
-        transform.GetComponent<SpriteRenderer>().enabled = (gameManager.nbCoupsRestants == 0 && !EventManager.levelStarted);
+        transform.GetComponent<SpriteRenderer>().enabled = ( !EventManager.levelStarted);
     }
 
     bool animationEnded = true;
@@ -24,8 +24,7 @@ public class startButton : MonoBehaviour
             animator.SetInteger("pressed",1);
         }
         
-        if (Input.GetMouseButtonDown(0)
-        && gameManager.nbCoupsRestants == 0)
+        if (Input.GetMouseButtonDown(0))
         {
             animationEnded = false;
             animator.SetInteger("pressed",2);
@@ -38,13 +37,15 @@ public class startButton : MonoBehaviour
         animator.SetInteger("pressed",0);
     }
 
+    public EventManager eventM;
+
     IEnumerator unclickButton()
     {
         yield return new WaitForSeconds(0.3f);
         animator.SetInteger("pressed",2);
 
         yield return new WaitForSeconds(0.1f);
-        EventManager.startLevel();
+        eventM.startLevel();
         animationEnded = true;
        
     }

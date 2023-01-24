@@ -13,19 +13,31 @@ public class playerController : MonoBehaviour
 
     private bool jump = false;
 
+    private bool canMove = false;
+
     // Update is called once per frame
     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        if(Input.GetButtonDown("Jump"))
+        if(canMove)
         {
-            jump = true;
+            horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+            if(Input.GetButtonDown("Jump"))
+            {
+                jump = true;
+            }
         }
+        
     }
 
     void FixedUpdate ()
     {
         movement.Move(horizontalMove * Time.fixedDeltaTime,jump);
         jump = false;
+    }
+
+
+    public void start()
+    {
+        canMove = true;
     }
 }

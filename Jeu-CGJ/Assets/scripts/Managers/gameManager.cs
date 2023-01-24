@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class gameManager : MonoBehaviour
 {
-    public static int nbCoups = 1;
-    public static int nbCoupsRestants = nbCoups;
+    public static int nbCoups;
+    public static int nbCoupsRestants;
+
+    public static int etapesequence;
 }

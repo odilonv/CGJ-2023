@@ -5,16 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class levelScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int nbCoups;
+    void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gameManager.nbCoups = nbCoups;
+        gameManager.nbCoupsRestants = nbCoups;
+        gameManager.etapesequence = 0;
     }
 
     public void ResetLevel()

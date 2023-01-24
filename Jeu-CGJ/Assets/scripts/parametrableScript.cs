@@ -50,6 +50,19 @@ public class parametrableScript : MonoBehaviour
         overed = false;
     }
 
+    public void action()
+    {
+        if(transform.GetComponent<mobBehaviour>() != null)
+        {
+            transform.GetComponent<mobBehaviour>().startAction();
+            Debug.Log("action");
+        }
+        else if(transform.GetComponent<blockBehaviour>() != null)
+        {
+            transform.GetComponent<blockBehaviour>().startAction();
+        }
+    }
+
 
     
     
