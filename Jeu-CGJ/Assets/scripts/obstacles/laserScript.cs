@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class laserScript : MonoBehaviour
 {
-    public GameObject player;
-
     [SerializeField] private float defRayDistance = 100;
     public Transform laserPoint;
     public LineRenderer lineRenderer;
