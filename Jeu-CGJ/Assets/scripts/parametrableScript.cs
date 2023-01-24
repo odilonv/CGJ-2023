@@ -55,7 +55,6 @@ public class parametrableScript : MonoBehaviour
         if(transform.GetComponent<mobBehaviour>() != null)
         {
             transform.GetComponent<mobBehaviour>().startAction();
-            Debug.Log("action");
         }
         else if(transform.GetComponent<blockBehaviour>() != null)
         {
