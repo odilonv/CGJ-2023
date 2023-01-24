@@ -32,6 +32,5 @@ public class blockScript : MonoBehaviour
     void nextAction()
     {
         rb.gravityScale *= -1f;
-        Debug.Log("triggered");
     }
 }

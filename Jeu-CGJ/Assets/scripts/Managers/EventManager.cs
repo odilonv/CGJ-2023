@@ -25,6 +25,5 @@ public class EventManager : MonoBehaviour
         {
             OnNextAction();
         }
-        
     }
 }
