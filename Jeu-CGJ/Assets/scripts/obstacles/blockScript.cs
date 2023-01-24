@@ -41,6 +41,7 @@ public class blockScript : MonoBehaviour
 
     void nextAction()
     {
+    
 
         if (param.mode == 0)
         {
@@ -50,7 +51,7 @@ public class blockScript : MonoBehaviour
         }
 
         if(param.mode == 1)
-        {
+        { 
             rb.gravityScale *= 1f;
             Debug.Log("gravité normale ");
         }
