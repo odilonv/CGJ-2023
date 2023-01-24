@@ -4,15 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Wall
+  - platformLeftRight
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Mob
+  - 
   - Water
   - UI
-  - Player
+  - 
   - 
   - 
   - 
