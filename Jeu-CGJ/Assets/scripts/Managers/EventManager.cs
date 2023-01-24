@@ -15,7 +15,7 @@ public class EventManager : MonoBehaviour
     {
         if(Input.GetButtonDown("NextAction"))
         {
-            nextAction();    
+            nextAction();
         } 
     }
 
