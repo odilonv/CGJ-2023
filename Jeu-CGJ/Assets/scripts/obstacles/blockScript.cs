@@ -45,7 +45,7 @@ public class blockScript : MonoBehaviour
 
         if (param.mode == 0)
         {
-            rb.gravityScale *=0f;
+            rb.gravityScale *=0;
             Debug.Log("Pause Objet");
 
         }
