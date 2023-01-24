@@ -8,7 +8,7 @@ public class stateDisplayScript : MonoBehaviour
 
     void Start()
     {
-        param = transform.parent.GetComponent<parametrableScript>();
+        //param = transform.parent.GetComponent<parametrableScript>();
     }
 
     void Update(){

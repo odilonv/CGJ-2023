@@ -25,7 +25,12 @@ public class mobMovementScript : MonoBehaviour
     public void Flip()
     {
         transform.eulerAngles += new Vector3(0, 180, 0);
-    }
+
+        //chope l'enfant "inFrontOfBlock"
+        //transform.GetChild(2).transform.position = new Vector3(transform.GetChild(2).transform.position.x,transform.GetChild(2).transform.position.y,transform.GetChild(2).transform.position.z*-1);
+       
+    
+ }
 
 
 
