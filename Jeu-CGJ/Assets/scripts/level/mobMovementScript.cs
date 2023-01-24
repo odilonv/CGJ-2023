@@ -22,9 +22,14 @@ public class mobMovementScript : MonoBehaviour
        
     }
 
+    public int front = -1;
     public void Flip()
     {
+    
         transform.eulerAngles += new Vector3(0, 180, 0);
+        front *= -1;
+        transform.GetChild(1).transform.localPosition = new Vector3(0, 0, front);
+        
 
         //chope l'enfant "inFrontOfBlock"
         //transform.GetChild(2).transform.position = new Vector3(transform.GetChild(2).transform.position.x,transform.GetChild(2).transform.position.y,transform.GetChild(2).transform.position.z*-1);

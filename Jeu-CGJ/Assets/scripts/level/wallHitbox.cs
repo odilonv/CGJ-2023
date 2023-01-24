@@ -18,9 +18,10 @@ public class wallHitbox : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.gameObject.CompareTag("Wall"))
         {
-            transform.parent.GetComponent<mobMovementScript>().Flip();
+            transform.parent.transform.parent.GetComponent<mobMovementScript>().Flip();
         }
     }
 }
