@@ -6,7 +6,9 @@ public class buttonScript : MonoBehaviour
 {
     public actionButtonScript parentButton;
     public bool overed;
+    public GameObject overEffect;
     public int state;
+    public bool selected = false;
 
     void Start()
     {
@@ -15,19 +17,38 @@ public class buttonScript : MonoBehaviour
 
     void OnMouseOver()
     {
-        overed = true;
-        //activer overlay
-        if (Input.GetMouseButtonDown(0)
-        && parentButton.moreButtons)
+        if(parentButton.moreButtons)
         {
-            editManager.editState = state;
-           
+            overed = true;
+            overEffect.GetComponent<SpriteRenderer>().enabled = true;
+            if (Input.GetMouseButtonDown(0))
+            {
+                editManager.editState = state;
+                selected = !selected;
+            }
         }
+        
+        //activer overlay
+        
             
     }
 
     void OnMouseExit()
     {
-        overed = false;
+        if(!selected)
+        {
+            overed = false;
+            overEffect.GetComponent<SpriteRenderer>().enabled = false;
+        }
+    }
+
+    void Update()
+    {
+        if(editManager.editState != state)
+        {
+            selected = false;
+            overed = false;
+            overEffect.GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 }

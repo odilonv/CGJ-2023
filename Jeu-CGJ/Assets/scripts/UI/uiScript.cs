@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class editManager : MonoBehaviour
+public class uiScript : MonoBehaviour
 {
-    public static int editState;
-    public static bool editMode;
-
     void OnEnable()
     {
         EventManager.OnLevelStart += start;
@@ -19,7 +16,6 @@ public class editManager : MonoBehaviour
 
     void start()
     {
-        editState = -2;
-        editMode = false;
+        transform.gameObject.SetActive(false);
     }
 }

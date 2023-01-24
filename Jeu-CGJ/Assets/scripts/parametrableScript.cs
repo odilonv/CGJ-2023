@@ -8,6 +8,8 @@ public class parametrableScript : MonoBehaviour
     public int mode = -2;
     public bool overed;
 
+    public numeroSequence num;
+
     void OnMouseOver()
     {
         if(editManager.editMode)
@@ -15,12 +17,23 @@ public class parametrableScript : MonoBehaviour
             overed = true;
             if (Input.GetMouseButtonDown(0))
             {
+                
                 if(mode == editManager.editState)
                 {
+                    gameManager.nbCoupsRestants ++;
+                    num.GetComponent<SpriteRenderer>().enabled = false;
                     mode = -2;
                 }
-                else
+                else if(gameManager.nbCoupsRestants > 0)
                 {
+                    
+                    if(mode == -2)
+                    {
+                        gameManager.nbCoupsRestants --;
+                    }
+                    num.GetComponent<SpriteRenderer>().enabled = true;
+                    num.num = gameManager.nbCoups - gameManager.nbCoupsRestants ;
+            
                     mode = editManager.editState;
                 }
                 

@@ -6,9 +6,13 @@ public class actionButtonScript : MonoBehaviour
 {
     public bool moreButtons;
     public bool overed;
+    public GameObject overEffect;
+    public numeroSequence numActionsRestantes;
+
     void OnMouseOver()
     {
         overed = true;
+        overEffect.GetComponent<SpriteRenderer>().enabled = true;
         //activer overlay
         if (Input.GetMouseButtonDown(0))
         {
@@ -28,5 +32,15 @@ public class actionButtonScript : MonoBehaviour
     void OnMouseExit()
     {
         overed = false;
+        overEffect.GetComponent<SpriteRenderer>().enabled = false;
     }
+
+
+    void Update()
+    {
+        numActionsRestantes.num = gameManager.nbCoupsRestants;
+        
+    }
+
+    
 }

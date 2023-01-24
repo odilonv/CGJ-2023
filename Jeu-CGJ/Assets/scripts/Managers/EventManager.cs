@@ -26,4 +26,19 @@ public class EventManager : MonoBehaviour
             OnNextAction();
         }
     }
+
+    public delegate void StartLevel();
+    public static event StartLevel OnLevelStart; 
+
+
+    public static bool levelStarted = false;
+    public static void startLevel()
+    {
+        levelStarted = true;
+        if(OnLevelStart != null)
+        {
+            OnLevelStart();
+        }
+        
+    }
 }
