@@ -12,11 +12,11 @@ public class EventManager : MonoBehaviour
         
     }
 
-    int i = 1;
+    public int i = 1;
     void Update()
     {
         if(Input.GetButtonDown("NextAction")
-        && (i <= (gameManager.nbCoups - gameManager.nbCoupsRestants))
+        && (i != (gameManager.nbCoups - gameManager.nbCoupsRestants)+1)
         && levelStarted)
         {
             
@@ -31,10 +31,10 @@ public class EventManager : MonoBehaviour
         {
             if(p.num.num == i)
             {
-                i++;
                 p.action();
             }
         }
+        i++;
     }
 
     

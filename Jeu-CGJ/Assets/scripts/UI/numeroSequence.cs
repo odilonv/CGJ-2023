@@ -5,6 +5,7 @@ using UnityEngine;
 public class numeroSequence : MonoBehaviour
 {
     Animator animator; 
+    
     public int num = 0;
 
     void Start()
@@ -16,5 +17,6 @@ public class numeroSequence : MonoBehaviour
     void Update()
     {
         animator.SetInteger("numSequence",num);
+        
     }
 }

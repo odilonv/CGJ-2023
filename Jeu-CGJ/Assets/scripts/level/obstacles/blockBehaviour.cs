@@ -35,10 +35,9 @@ public class blockBehaviour : MonoBehaviour
 
     public void start()
     {
-        if(param.mode == -2)
-        {
-            play();
-        }
+        
+        play();
+        
         
     }
 

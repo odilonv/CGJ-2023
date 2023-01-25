@@ -9,11 +9,15 @@ public class mobMovementScript : MonoBehaviour
     public BoxCollider2D hitboxWall;
     void Awake() => m_transform = transform;
     void FixedUpdate() => m_transform.position += m_transform.TransformDirection(Vector3.left) * speed;
+    public bool isFlipped;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(isFlipped)
+        {
+            Flip();
+        }
     }
 
     // Update is called once per frame
