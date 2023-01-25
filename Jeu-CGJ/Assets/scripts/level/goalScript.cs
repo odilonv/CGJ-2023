@@ -7,6 +7,11 @@ public class goalScript : MonoBehaviour
 {
     public int nextLevel;
 
+    void Start()
+    {
+        StartCoroutine(animateGoal());
+    }
+
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -14,5 +19,20 @@ public class goalScript : MonoBehaviour
         {
             SceneManager.LoadScene(nextLevel);
         }
+    }
+
+    public GameObject spirale;
+    IEnumerator animateGoal()
+    {
+        int d = 0;
+        while(true)
+        {
+            
+        
+            d = (d-90)%360;
+            spirale.transform.rotation = Quaternion.Euler(0f, 0f,d);
+            yield return new WaitForSeconds(0.3f);
+        }
+        
     }
 }

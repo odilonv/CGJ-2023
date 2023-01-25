@@ -15,15 +15,25 @@ public class playerController : MonoBehaviour
 
     private bool canMove = false;
 
+    public Animator anim;
+
+    void Start()
+    {
+        anim = transform.GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(canMove)
         {
             horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+            anim.SetFloat("speed",Mathf.Abs(horizontalMove));
             if(Input.GetButtonDown("Jump"))
             {
                 jump = true;
+                
+                StartCoroutine(jumpCoroutine());
             }
         }
         
@@ -33,6 +43,16 @@ public class playerController : MonoBehaviour
     {
         movement.Move(horizontalMove * Time.fixedDeltaTime,jump);
         jump = false;
+        
+    }
+
+
+    IEnumerator jumpCoroutine()
+    {
+        anim.SetBool("jump",true);
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool("jump",false);
+
     }
 
 
