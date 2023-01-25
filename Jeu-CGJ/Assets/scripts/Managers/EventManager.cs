@@ -19,7 +19,6 @@ public class EventManager : MonoBehaviour
         && (i != (gameManager.nbCoups - gameManager.nbCoupsRestants)+1)
         && levelStarted)
         {
-            
             nextAction();    
         } 
     }
@@ -44,6 +43,8 @@ public class EventManager : MonoBehaviour
 
     public mobBehaviour[] mobListe;
     public blockBehaviour[] blockListe;
+    public ElevatorScript[] fanListe;
+    public int t;
     public playerController player;
     public uiScript ui;
     public editManager edit;
@@ -65,6 +66,14 @@ public class EventManager : MonoBehaviour
             if(b != null)
             {
                 b.start();
+            }
+        }
+
+        foreach (ElevatorScript e in fanListe)
+        {
+            if(e != null)
+            {
+                e.start();
             }
         }
 

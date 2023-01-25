@@ -625,6 +625,7 @@ MonoBehaviour:
   speed: 0.05
   hitboxWall: {fileID: 1275344297866983437}
   isFlipped: 0
+  anim: {fileID: 5308525126765060241}
   front: -1
 --- !u!114 &2753171018673597047
 MonoBehaviour:
@@ -912,7 +913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7450978503473693489
 Transform:
   m_ObjectHideFlags: 0
@@ -1012,6 +1013,7 @@ GameObject:
   - component: {fileID: 8562996116673242748}
   - component: {fileID: 8562996116673242749}
   - component: {fileID: 7450978502864367508}
+  - component: {fileID: 5308525126765060241}
   m_Layer: 3
   m_Name: mobObject
   m_TagString: Untagged
@@ -1126,3 +1128,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Respawn: 2
+--- !u!95 &5308525126765060241
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8562996116673242746}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f4853bebf9b5e7498b1d3d05955e14b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -8,6 +8,7 @@ public class contactKillScript : MonoBehaviour
     public int Respawn;
 
 
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

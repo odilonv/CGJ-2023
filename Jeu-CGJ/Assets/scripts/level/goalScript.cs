@@ -28,9 +28,12 @@ public class goalScript : MonoBehaviour
         while(true)
         {
             
-        
-            d = (d-90)%360;
-            spirale.transform.rotation = Quaternion.Euler(0f, 0f,d);
+            if(EventManager.levelStarted)
+            {
+                d = (d-90)%360;
+                spirale.transform.rotation = Quaternion.Euler(0f, 0f,d);
+            }
+            
             yield return new WaitForSeconds(0.3f);
         }
         

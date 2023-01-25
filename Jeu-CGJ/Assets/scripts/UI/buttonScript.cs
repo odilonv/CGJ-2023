@@ -44,11 +44,12 @@ public class buttonScript : MonoBehaviour
 
     void Update()
     {
-        if(editManager.editState != state)
+        if(editManager.editState != state || !parentButton.moreButtons)
         {
             selected = false;
             overed = false;
             overEffect.GetComponent<SpriteRenderer>().enabled = false;
+            
         }
     }
 }

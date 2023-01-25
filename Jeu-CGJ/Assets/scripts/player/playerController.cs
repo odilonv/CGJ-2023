@@ -35,8 +35,20 @@ public class playerController : MonoBehaviour
                 
                 StartCoroutine(jumpCoroutine());
             }
+            if(Input.GetButtonDown("NextAction"))
+            {
+                StartCoroutine(actionCoroutine());
+            }
         }
         
+        
+    }
+
+    IEnumerator actionCoroutine()
+    {
+        anim.SetBool("action",true);
+        yield return new WaitForSeconds(0.3f);
+        anim.SetBool("action",false);
     }
 
     void FixedUpdate ()

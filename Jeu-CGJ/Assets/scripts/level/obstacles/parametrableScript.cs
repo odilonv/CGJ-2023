@@ -65,6 +65,10 @@ public class parametrableScript : MonoBehaviour
         {
             transform.GetComponent<blockBehaviour>().startAction();
         }
+        else if(transform.GetComponent<ElevatorScript>() != null)
+        {
+            transform.GetComponent<ElevatorScript>().mode = mode;
+        }
     }
 
 

@@ -6,6 +6,16 @@ public class uiScript : MonoBehaviour
 {
     public void start()
     {
-        transform.gameObject.SetActive(false);
+        
+        foreach(Transform child in transform.GetChild(0).transform)
+        {
+            
+            if(child.transform.name != "Restart")
+            {
+                child.gameObject.SetActive(false);
+            }
+            
+        }
+        
     }
 }
